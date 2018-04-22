@@ -33,7 +33,7 @@ const connectMongo = async () => {
 
 (async () => {
   const mongoConnection = await connectMongo();
-  const mongo = new MongooseConnector(mongoConnection);
+  const mongoose = new MongooseConnector(mongoConnection);
 
   const server = new GraphQLServer({
     typeDefs: './schema.graphql',
@@ -41,7 +41,7 @@ const connectMongo = async () => {
     context: req => ({
       ...req,
       db: {
-        mongo
+        mongoose
       }
     })
   });

@@ -18,8 +18,12 @@
     "prettier": "^1.12.1"
   },
   "dependencies": {
+    "async-middleware": "^1.2.1",
     "esm": "^3.0.20",
     "graphql-yoga": "^1.8.5",
-    "mongoose": "^5.0.15"
+    "lodash": "^4.17.5",
+    "mongodb": "^3.0.7",
+    "mongoose": "^5.0.15",
+    "p-map": "^1.2.0"
   }
 }
