@@ -1,5 +1,6 @@
 type Query {
   login(username: String!): User
+  searchBot(_id: String!): Bot
 }
 
 type Mutation {
@@ -37,4 +38,36 @@ type Bot {
   defaultLocale: String
   status: String
   owner: User!
+  cards: [Card]
+  plugins: [Plugin]
+  actions: [Action]
+  dialogs: [Dialog]
+}
+
+type Action {
+  _id: ID!
+  name: String!
+  code: String!
+}
+
+type Card {
+  _id: ID!
+  name: String!
+  type: String!
+}
+
+type Plugin {
+  _id: ID!
+  name: String!
+  description: String!
+  code: String!
+}
+
+type Dialog {
+  _id: ID!
+  name: String!
+  cards: [Card]
+  plugins: [Plugin]
+  actions: [Action]
+  dialogs: [Dialog]
 }

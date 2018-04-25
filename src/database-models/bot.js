@@ -5,8 +5,8 @@ const { ObjectId } = Schema.Types;
 
 const BotSchema = new Schema(
   {
-    name: { type: String, required: true, index: { unique: true } },
-    key: { type: String, required: true },
+    name: { type: String, required: true },
+    key: { type: String, required: true, index: { unique: true } },
     description: { type: String },
     defaultLocale: { type: String },
     status: { type: String },

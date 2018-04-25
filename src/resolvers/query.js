@@ -14,6 +14,20 @@ const login = async (root, args, context, info) => {
   return user;
 };
 
+const searchBot = async (root, args, context, info) => {
+  const where = {
+    _id: args._id
+  };
+
+  const bot = await Bot.findOne(where).lean();
+  const user = await User.findOne({ _id: bot.ownerId }).lean();
+
+  bot.owner = user;
+
+  return bot;
+};
+
 export default {
-  login
+  login,
+  searchBot
 };
