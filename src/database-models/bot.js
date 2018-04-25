@@ -10,7 +10,8 @@ const BotSchema = new Schema(
     description: { type: String },
     defaultLocale: { type: String },
     status: { type: String },
-    ownerId: { type: ObjectId, required: true, ref: 'User' }
+    ownerId: { type: ObjectId, required: true, ref: 'User' },
+    cardsId: [{ type: ObjectId, required: true, ref: 'Card' }]
   },
   { timestamps: true }
 );
