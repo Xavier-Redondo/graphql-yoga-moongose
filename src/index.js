@@ -3,11 +3,16 @@ import mongoose from 'mongoose';
 
 import Query from './resolvers/query';
 import Mutation from './resolvers/mutation';
+import Bot from './resolvers/bot';
+import User from './resolvers/user';
+
 import MongooseConnector from './connectors/moongose';
 
 const resolvers = {
   Query,
-  Mutation
+  Mutation,
+  Bot,
+  User
 };
 
 const options = {
@@ -15,7 +20,7 @@ const options = {
   endpoint: '/graphql',
   subscriptions: '/subscriptions',
   playground: '/playground',
-  debug: true
+  tracing: true
 };
 
 const connectMongo = async () => {
